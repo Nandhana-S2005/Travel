@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Travelly | Blog</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #a0e7e5;
       color: #333;
+      line-height: 1.6;
     }
 
     nav {
@@ -29,24 +31,21 @@
 
     nav h1 {
       color: #4b3f72;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      font-size: 1.8rem;
       margin: 0;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
-      margin: 0;
-      padding: 0;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 500;
+      font-size: 1rem;
     }
 
     header {
@@ -59,7 +58,7 @@
     }
 
     header h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
 
@@ -84,7 +83,7 @@
       background: white;
       border-radius: 12px;
       margin-bottom: 2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -96,7 +95,7 @@
 
     .blog-post img {
       width: 100%;
-      height: 100%;
+      height: 300px;
       object-fit: cover;
     }
 
@@ -105,98 +104,18 @@
     }
 
     .blog-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       color: #2c3e50;
-      margin-top: 0;
-      transition: color 0.3s ease;
-    }
-
-    .blog-content h3:hover {
-      color: #3498db;
     }
 
     .blog-content p {
+      font-size: 1rem;
       color: #555;
-      line-height: 1.6;
     }
 
-    .read-more-btn, .btn {
-      background-color: #4b3f72;  /* Dark blue to match the overall theme */
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .read-more-btn:hover, .btn:hover {
-      background-color: #2c3e50;  /* A slightly darker shade for hover effect */
-    }
-
-    .trending-destinations {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .destination {
-      text-align: center;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .trending-destinations img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .destination-info {
-      padding: 1rem;
-      background-color: white;
-    }
-
-    .destination-info h3 {
-      margin: 0;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #dfeefc;
-      font-size: 0.95rem;
-      color: #555;
-      margin-top: 2rem;
-    }
-
+    .travel-stories,
     .travel-tips {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-      margin-top: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .travel-tips .tip {
-      background-color: white;
-      border-radius: 8px;
-      padding: 1.2rem;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .travel-tips .tip:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    .travel-stories {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -206,138 +125,181 @@
       margin-right: auto;
     }
 
-    .travel-stories .story {
+    .story, .tip {
       background-color: white;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 1.5rem;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .travel-stories .story:hover {
+    .story:hover, .tip:hover {
       transform: scale(1.05);
       box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
     }
 
-    .button-section {
-      text-align: center;
-      margin-top: 3rem;
+    .story h3, .tip h3 {
+      font-size: 1.3rem;
+      color: #4b3f72;
+      margin-bottom: 0.5rem;
     }
 
-    .button-section .btn {
+    .story p, .tip p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .blog-buttons {
+      text-align: center;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .blog-buttons .btn {
       display: inline-block;
-      padding: 1rem 2rem;
       background-color: #4b3f72;
       color: white;
+      padding: 12px 24px;
+      margin: 10px;
+      border: none;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      margin: 0.5rem;
+      font-size: 16px;
+      border-radius: 30px;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .button-section .btn:hover {
-      background-color: #2c3e50;
-      transform: scale(1.05);
+    .blog-buttons .btn:hover {
+      background-color: #362e5c;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #dfeefc;
+      font-size: 0.95rem;
+      color: #555;
     }
 
     @media (max-width: 768px) {
-      .trending-destinations {
-        grid-template-columns: 1fr;
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
       }
 
-      .travel-tips,
-      .travel-stories {
-        grid-template-columns: 1fr;
+      nav h1 {
+        font-size: 1.5rem;
       }
 
-      nav a,
-      h1,
-      h2,
-      h3,
-      p {
-        text-decoration: none !important;
+      .blog-post img {
+        height: 200px;
+      }
+
+      header h2 {
+        font-size: 2rem;
+      }
+
+      .blog-content h3 {
+        font-size: 1.3rem;
+      }
+
+      .blog-buttons .btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
       }
     }
   </style>
-
 </head>
 
 <body>
 
   <!-- Navigation -->
-
   <nav>
     <h1>Travelly 🌍</h1>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="destinations.html"> Destinations</a></li>
-      <li><a href="blog.html"> Blog</a></li>
-      <li><a href="package.html"> Packages</a></li>
-      <li><a href="contact.html"> Contact</a></li>
-      
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="package.html">Packages</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Header -->
-
   <header>
     <h2>📝 Travel Blog 🌍</h2>
     <p>Real stories, practical tips & travel inspiration from around the globe.</p>
   </header>
 
   <!-- Blog Posts -->
-
-  <div id="blog-posts" class="container">
-    <div class="blog-post">
-      <a href="santorini.html">
-        <img src="https://lp-cms-production.imgix.net/2025-03/Shutterstock92342251.jpg?auto=format&fit=crop&w=1600&q=80" alt="Santorini Blog Image">
-        <div class="blog-content">
-          <h3>Exploring the Wonders of Santorini</h3>
-          <p>Santorini is known for its white-washed houses, stunning sunsets, and crystal-clear waters.</p>
-          <button class="read-more-btn">Read More</button>
-        </div>
-      </a>
-    </div>
-
-    <div class="blog-post">
-      <a href="prague.html">
-        <img src="https://cdn-imgix.headout.com/media/images/33b1833b42e8af419d4a0d8897eb2c48-This%20is%20a%20Photograph%20of%20St.%20Vitus%20Cathedral.jpg?auto=format&w=702.4499999999999&h=401.4&q=90&fit=crop&ar=7%3A4&crop=faces" alt="Prague Blog Image">
-        <div class="blog-content">
-          <h3>Discovering the Hidden Gems of Prague</h3>
-          <p>Prague, with its cobblestone streets and fairy-tale architecture, is a city steeped in history.</p>
-          <button class="read-more-btn">Read More</button>
-        </div>
-      </a>
-    </div>
-
-    <div class="blog-post">
-      <a href="egypt.html">
-        <img src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,w_1920,h_960,g_auto/dpr_auto/f_auto/q_auto:eco/v1/the-sphinx-gettyimages-1183584133?_a=BAVAZGDX0" alt="Egypt Blog Image">
-        <div class="blog-content">
-          <h3>🌍 Exploring the Wonders of Egypt: Pyramids & Beyond</h3>
-          <p>Egypt’s ancient wonders, including the Pyramids of Giza, continue to captivate travelers.</p>
-          <button class="read-more-btn">Read More</button>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <!-- Gallery and Why Choose Us Buttons -->
-
   <div class="container">
-    <div class="button-section">
-      <a href="whychoose%20us.html" class="btn">💡 Why Choose Us</a>
-      <a href="gallery.html" class="btn">📸 Gallery</a>
+    <div class="blog-post">
+        <img src="https://lp-cms-production.imgix.net/2025-03/Shutterstock92342251.jpg?auto=format&fit=crop&w=1600&q=80" alt="Santorini, Greece">
+      <div class="blog-content">
+        <h3>Exploring the Wonders of Santorini</h3>
+        <p>Santorini is known for its white-washed houses, stunning sunsets, and crystal-clear waters. This iconic Greek island offers mesmerizing views of the caldera and Aegean Sea.</p>
+      </div>
+    </div>
+
+    <div class="blog-post">
+      <img src="https://cdn-imgix.headout.com/media/images/33b1833b42e8af419d4a0d8897eb2c48-This%20is%20a%20Photograph%20of%20St.%20Vitus%20Cathedral.jpg?auto=format&q=90&fit=crop" alt="Prague, Czech Republic" alt="Prague, Czech Republic">
+      <div class="blog-content">
+        <h3>Discovering the Hidden Gems of Prague</h3>
+        <p>Prague is a city where history and beauty intertwine. Its skyline is adorned with fairy-tale spires, centuries-old churches, and the majestic Prague Castle.</p>
+      </div>
+    </div>
+
+    <div class="blog-post">
+      <img src="https://res.cloudinary.com/aenetworks/image/upload/v1/the-sphinx-gettyimages-1183584133" alt="Pyramids of Egypt">
+      <div class="blog-content">
+        <h3>🌍 Exploring the Wonders of Egypt</h3>
+        <p>Egypt is home to some of the most iconic monuments in the world, including the Great Pyramids. Journey through ancient tombs, temples, and the mystical Nile River.</p>
+      </div>
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Travel Stories -->
+  <div class="container">
+    <h2 class="section-title">📖 Travel Stories</h2>
+    <div class="travel-stories">
+      <div class="story">
+        <h3>My Backpacking Adventure in South America</h3>
+        <p>From hiking the Inca Trail to exploring the Amazon rainforest, it was life-changing.</p>
+      </div>
+      <div class="story">
+        <h3>Solo Travel in Japan 🇯🇵</h3>
+        <p>Exploring Tokyo, Kyoto, and Osaka alone taught me resilience and joy in discovery.</p>
+      </div>
+      <div class="story">
+        <h3>A Journey Through Europe 🇪🇺</h3>
+        <p>From Prague’s charm to Venice’s canals, every day brought something new.</p>
+      </div>
+    </div>
+  </div>
 
+  <!-- Travel Tips -->
+  <div class="container">
+    <h2 class="section-title">✈ Travel Tips</h2>
+    <div class="travel-tips">
+      <div class="tip"><h3>1. Pack Light</h3><p>Traveling light saves time and hassle. Use packing cubes!</p></div>
+      <div class="tip"><h3>2. Carry a Power Bank</h3><p>Don’t get stranded with a dead phone. Always carry a charger.</p></div>
+      <div class="tip"><h3>3. Learn Basic Phrases</h3><p>A few local words go a long way in making friends!</p></div>
+      <div class="tip"><h3>4. Use Public Transport</h3><p>It’s affordable, efficient, and a window into local life.</p></div>
+      <div class="tip"><h3>5. Stay Hydrated</h3><p>Especially when traveling in hot climates — drink water often.</p></div>
+    </div>
+  </div>
+
+  <!-- Buttons at Bottom -->
+  <div class="blog-buttons">
+    <a href="whychoose us.html" class="btn">💡 Why Choose Us</a>
+    <a href="gallery.html" class="btn">🖼️ Gallery</a>
+  </div>
+  
+  <!-- Footer -->
   <footer>
     <p>© 2025 Travelly. All rights reserved.</p>
   </footer>
 
 </body>
-
 </html>
